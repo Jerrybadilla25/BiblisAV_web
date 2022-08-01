@@ -11,7 +11,8 @@ import NavFhone from '../component/navFhone';
 
 
 export default function Home() {
-  const RUTA = "http://localhost:3000/api"
+  //const RUTA = "http://localhost:3000/api"
+  const RUTA = "http://bibliaav/api"
   const [versionView, setVersionView]= useState(false)
   const [version, setVersion]=useState("Reina_Valera_1960")
   const [books, setBooks]=useState(null)
