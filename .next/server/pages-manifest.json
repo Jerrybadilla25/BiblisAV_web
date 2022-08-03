@@ -4,7 +4,6 @@
   "/api/getBooks/getCharter": "pages/api/getBooks/getCharter.js",
   "/api/getBooks/getbook": "pages/api/getBooks/getbook.js",
   "/api/hello": "pages/api/hello.js",
-  "/": "pages/index.html",
-  "/_document": "pages/_document.js",
-  "/404": "pages/404.html"
+  "/": "pages/index.js",
+  "/_document": "pages/_document.js"
 }
