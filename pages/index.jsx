@@ -26,7 +26,7 @@ export default function Home() {
   const [bodyView, setBodyView] = useState(true);
   const [charterViews, setCharterViews] = useState(true);
 
-  useEffect(() => {
+  React.useEffect(() => {
     getBooks();
   }, []);
 
