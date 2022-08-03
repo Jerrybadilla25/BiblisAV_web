@@ -18,6 +18,8 @@ ul{
   --bg-body-backgroud: #e6f2ff;
   --input-fiel: #ffffff;
   --l-red:  #e01414;
+  --l-gray: #968b8b;
+  --l-hueso: whitesmoke;
   --bg-number-calender-succes:  #198754;
   --bg-number-calender-succes-hover:  rgb(54,46,186);
   --bg-number-calender-danger:  #fa0303;
@@ -40,6 +42,7 @@ ul{
 .navhelp{
   background-color: var(--bg-body-navHelp);
   padding: 0.75em 2em;
+  
 
 }
 .box-search{
@@ -88,11 +91,7 @@ li {
   /*background-color: var(--bg-body-navHelp);*/
 }
 
-@media only screen and (max-width: 720px) {
-  .box-libro {
-    display: none;
-  }
-}
+
 
 .list-per{
   color: black;
@@ -151,18 +150,25 @@ li {
 
 
 .body-per{
-  /*overflow: scroll;*/
-  margin-top: 2px;
-  background-color: var(--bg-body-backgroud);
-  
+ background-color: var(--l-hueso);
+}
+.body-per-1{
+  padding: 2em 4em;
+  margin: 1em 0.2em;
+  border: var(--l-gray) solid 1px;
+  background-color: var(--input-fiel);
 }
 .text-1{
+  font-size: 16px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: bolder;
+  font-weight: 700;
 }
 .text-2{
+  font-size: 12px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  color: #fa0303;
+  color: var(--l-red);
+  margin-bottom: 2em;
+  
 }
 .text-verses{
   font-family:'Times New Roman', Times, serif;
@@ -178,71 +184,102 @@ li {
 
 /*#################### barra fhone #################*/
 .nav-barra{
-  
   padding-top: 4px;
   padding-bottom: 4px;
-  background-color: var(--bg-body-navHelp);
+  border-bottom: var(--bg-body-header) solid 2px;
+  background-color: var(--l-hueso);
 }
-.item-menu{
-  width: 100px;
+
+.btn-per{
   background-color: var(--bg-body-header);
-  padding: 0px 15px;
+  color: var(--input-fiel);
+}
+
+.input-per{
+  width: 23em;
+  border: var(--l-gray) solid 2px;
+  outline: none;
+  /*border-radius: 6px;*/
+}
+
+input::placeholder {
+  font-weight: bold;
+  opacity: .5;
+  padding-left: 5px;
+  color: var(--l-gray);
+}
+.selection-per{
+  width: 100%;
+  border: var(--l-gray) solid 2px;
+  outline: none;
+  /*border-radius: 6px;*/
+  padding: 6px 2px;
+}
+select option {
+  border: var(--l-gray) solid 2px;
   border-radius: 6px;
 }
 
-.item-menu-1{
+
+/*########################## libros contenedor ###################*/
+.contenedor-libro{
+  padding: 2em 3em;
+  margin: 1em;
+  background-color: var(--bg-body-backgroud);
   border-radius: 8px;
+}
+.icon-text-danger{
+  color: var(--l-red);
+  font-weight: bold;
+}
+.contenedor-libro h4{
+  color: var(--bg-body-header);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  padding-bottom: 1em;
+  font-size: 1.3em;
+  
+}
+.contenedor-libro h6{
+  padding: 2px 10px;
+}
+.contenedor-libro div div div{
+  padding: 2px;
+}
+.contenedor-libro div div div:hover{
   background-color: var(--bg-body-header);
+  color: var(--input-fiel);
 }
-.item-menu-2{
-  border-radius: 8px;
-  background-color: var(--bg-body-header);
+.charter-number{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:flex-start;
+  padding: 10px;
+  
 }
-
-.nav li ul{
-  margin-top: 2px !important;
+.charter-number div{
+  width: 60px;
+  margin: 5px;
 }
-
-
-.nav  li a{
-  background-color: var(--bg-body-header);
-  color: var(--input-fiel) !important;
-  text-decoration: none;
-  padding: 8px 15px;
-  margin-right: 3px;
-  display: block;
+.charter-number div p{
+  margin: 6px 0px !important;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  padding: 4px;
 }
-
-.nav li a:hover{
-  /*background-color: var(--bg-body-navHelp);*/
-  color: var(--l-red) !important;
-}
-.nav > li{
-  float: left;
-}
-
-.nav li ul{
-  display: none;
-  position: absolute;
-  /*min-width: 140px;*/
-}
-.nav li:hover > ul{
-  display: block;
-}
-.nav li ul li {
-  position: relative;
-}
-.nav li ul li ul{
-  right: -68px;
-  top: 0px;
-}
-
-.number-item {
-  width: 50px;
+.border-buton{
+  border-bottom: var(--bg-body-header) solid 2px;
+  padding-bottom: 1em;
   
 }
 
 
-
-
+/*###################### media screen fhone #####################*/
+@media only screen and (max-width: 720px) {
+  .display-none {
+    display: none;
+  }
+}
 

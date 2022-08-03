@@ -42,7 +42,8 @@ async function books(req, res) {
         _id: 1,
         book: 1,
         order: 1,
-        capitulos: 1
+        capitulos: 1,
+        testament: 1
     });
     let char = await _model_modelcharter__WEBPACK_IMPORTED_MODULE_2__/* ["default"].findOne */ .Z.findOne({
         version: req.body.version

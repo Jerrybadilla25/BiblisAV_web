@@ -8,10 +8,10 @@ const Cuerpo = ({charterView}) => {
     }
 
     return (
-        <div className='px-5 py-5 body-per'>
-           
-            <h1 className='text-center text-1'>{charterView.charter}</h1>
-            <h6 className='text-center my-3 text-2'>{charterView.testament}</h6>
+        
+            <div className='body-per-1'>
+                <h1 className='text-1'>{charterView.charter}</h1>
+            <h2 className='text-2'>{charterView.testament}</h2>
             {
                 charterView.verses.map(x =>(
                     <div key={x._id}>
@@ -20,9 +20,12 @@ const Cuerpo = ({charterView}) => {
 
                 ))
             }
-             <h6 className='text-center my-5 text-2'>{charterView.version}</h6>
              
-        </div>
+            </div>
+           
+            
+             
+       
     );
 }
 

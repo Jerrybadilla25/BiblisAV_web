@@ -1,55 +1,37 @@
 import React from "react";
 
-const NavFhone = ({ books, getCharter }) => {
+const NavFhone = ({ books, getCharter, changeNavView }) => {
 
     if(books===null){
         return(<div>hada</div>)
     }
   return (
     <div className="nav-barra">
-      <div className="d-flex justify-content-between align-items-center barra-menu">
-
-        <nav className="">
-          <ul className="nav">
-            <li className="item-menu mx-1"><a>Libros</a>
-              <ul className="item-menu-1">
-                {
-                  books.map(x => (
-                    <div key={x._id}>
-                      <li><a>{x.book}</a>
-                        <ul className="item-menu-2">
-                          {
-                            x.capitulos.map((y, m)=>(
-                              <div className="number-item" onClick={()=>getCharter(y)}>
-                                <li><a>{m+1}</a></li>
-                              </div>
-                            ))
-                          }
-                        </ul>
-                      </li>
-                    </div>
-                  ))
-                }
-                
-              </ul>
-            </li>
-            <li className="item-menu"><a>Version</a></li>
-          </ul>
-        </nav>
-   
-
-
-        <form className="">
-          <input
-            className=""
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
+      <div className="mx-3 mt-3"  >
+        <form action="" className="d-flex justify-content-between" >
+          <input 
+          type="text" 
+          className="input-per" 
+          placeholder="Digite libro, palabra, versiculo"
           />
-          <button className="" type="submit">
-            Search
-          </button>
+          <button className="btn btn-per px-4"><i className="bi bi-search"></i></button>
         </form>
+      </div>
+      <div className="mx-3 mt-3">
+          <select className="selection-per">
+            <option value="" className="option-per">Reina Valera 1960</option>
+            <option value="" className="option-per">Version del Oso 1906</option>
+          </select>
+      </div>
+      <div className="d-flex justify-content-between px-3 pt-3">
+          <div className="d-flex justify-content-between" onClick={changeNavView} >
+            <p className="mx-2">Biblia, Libros</p>
+            <i className="bi bi-journal-arrow-down"></i>
+          </div>
+          <div className="d-flex justify-content-between">
+            <p className="mx-2">Tamaño fuente</p> 
+            <i className="bi bi-file-font"></i>
+          </div>
       </div>
     </div>
   );
