@@ -32,13 +32,13 @@ export default function Home() {
   const [bodyView, setBodyView] = useState(true);
   const [charterViews, setCharterViews] = useState(true);
 
-  useEffect(() => {
-
-    async function getBooks (){
+  useEffect((version) => {
+    const vers = version
+    async function getBooks (vers){
       try {
         const data = await fetch(`${RUTA}/api/getBooks/getbook`, {
           method: "POST",
-          body: JSON.stringify({ version: version }),
+          body: JSON.stringify({ version: vers }),
           headers: {
             "Content-Type": "application/json",
             Accept: "application/json",

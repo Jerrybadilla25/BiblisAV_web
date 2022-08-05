@@ -1,85 +1,61 @@
 "use strict";
-/*
- * ATTENTION: An "eval-source-map" devtool has been used.
- * This devtool is neither made for production nor for readable output files.
- * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
- * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
- * or disable the default devtool with "devtool: false".
- * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
- */
 (() => {
 var exports = {};
-exports.id = "pages/api/getBooks/getbook";
-exports.ids = ["pages/api/getBooks/getbook"];
+exports.id = 223;
+exports.ids = [223];
 exports.modules = {
 
-/***/ "dotenv":
-/*!*************************!*\
-  !*** external "dotenv" ***!
-  \*************************/
+/***/ 142:
 /***/ ((module) => {
 
 module.exports = require("dotenv");
 
 /***/ }),
 
-/***/ "mongoose":
-/*!***************************!*\
-  !*** external "mongoose" ***!
-  \***************************/
+/***/ 663:
 /***/ ((module) => {
 
 module.exports = require("mongoose");
 
 /***/ }),
 
-/***/ "(api)/./config/db.js":
-/*!**********************!*\
-  !*** ./config/db.js ***!
-  \**********************/
+/***/ 335:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"dbConection\": () => (/* binding */ dbConection)\n/* harmony export */ });\n/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mongoose */ \"mongoose\");\n/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(mongoose__WEBPACK_IMPORTED_MODULE_0__);\n\n(__webpack_require__(/*! dotenv */ \"dotenv\").config)();\nconst conn = {\n    isConnected: false\n};\nasync function dbConection() {\n    if (conn.isConnected) return;\n    const db = await (0,mongoose__WEBPACK_IMPORTED_MODULE_0__.connect)(process.env.URI, {\n        useNewUrlParser: true,\n        useUnifiedTopology: true,\n        autoIndex: false\n    });\n    conn.isConnected = db.connections[0].readyState;\n    console.log(db.connection.db.databaseName);\n}\nmongoose__WEBPACK_IMPORTED_MODULE_0__.connection.on(\"connected\", ()=>{\n    console.log(\"Mongo is enable\");\n});\nmongoose__WEBPACK_IMPORTED_MODULE_0__.connection.on(\"error\", (err)=>{\n    console.log(err);\n});\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFwaSkvLi9jb25maWcvZGIuanMuanMiLCJtYXBwaW5ncyI6Ijs7Ozs7O0FBQThDO0FBQzlDRSxvREFBd0IsRUFBRSxDQUFDO0FBSzNCLE1BQU1FLElBQUksR0FBRztJQUNUQyxXQUFXLEVBQUcsS0FBSztDQUN0QjtBQUVNLGVBQWVDLFdBQVcsR0FBRTtJQUMvQixJQUFJRixJQUFJLENBQUNDLFdBQVcsRUFBRSxPQUFPO0lBRTdCLE1BQU1FLEVBQUUsR0FBRyxNQUFNUCxpREFBTyxDQUFDUSxPQUFPLENBQUNDLEdBQUcsQ0FBQ0MsR0FBRyxFQUFFO1FBQ3RDQyxlQUFlLEVBQUUsSUFBSTtRQUFFQyxrQkFBa0IsRUFBRSxJQUFJO1FBQy9DQyxTQUFTLEVBQUUsS0FBSztLQUNuQixDQUFDO0lBQ0ZULElBQUksQ0FBQ0MsV0FBVyxHQUFFRSxFQUFFLENBQUNPLFdBQVcsQ0FBQyxDQUFDLENBQUMsQ0FBQ0MsVUFBVTtJQUM5Q0MsT0FBTyxDQUFDQyxHQUFHLENBQUNWLEVBQUUsQ0FBQ04sVUFBVSxDQUFDTSxFQUFFLENBQUNXLFlBQVksQ0FBQztDQUU3QztBQUVEakIsbURBQWEsQ0FBQyxXQUFXLEVBQUUsSUFBSTtJQUMzQmUsT0FBTyxDQUFDQyxHQUFHLENBQUMsaUJBQWlCLENBQUM7Q0FDakMsQ0FBQztBQUVGaEIsbURBQWEsQ0FBQyxPQUFPLEVBQUUsQ0FBQ21CLEdBQUcsR0FBRztJQUMxQkosT0FBTyxDQUFDQyxHQUFHLENBQUNHLEdBQUcsQ0FBQztDQUNuQixDQUFDIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vYmlibGlhX2F2X3dlYi8uL2NvbmZpZy9kYi5qcz9iNDkzIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydHsgY29ubmVjdCwgY29ubmVjdGlvbiB9IGZyb20gJ21vbmdvb3NlJztcclxucmVxdWlyZSgnZG90ZW52JykuY29uZmlnKCk7XHJcblxyXG5cclxuXHJcblxyXG5jb25zdCBjb25uID0ge1xyXG4gICAgaXNDb25uZWN0ZWQgOiBmYWxzZVxyXG59XHJcblxyXG5leHBvcnQgYXN5bmMgZnVuY3Rpb24gZGJDb25lY3Rpb24oKXtcclxuICAgIGlmIChjb25uLmlzQ29ubmVjdGVkKSByZXR1cm47XHJcblxyXG4gICAgY29uc3QgZGIgPSBhd2FpdCBjb25uZWN0KHByb2Nlc3MuZW52LlVSSSwge1xyXG4gICAgICAgIHVzZU5ld1VybFBhcnNlcjogdHJ1ZSwgdXNlVW5pZmllZFRvcG9sb2d5OiB0cnVlLFxyXG4gICAgICAgIGF1dG9JbmRleDogZmFsc2VcclxuICAgIH0pXHJcbiAgICBjb25uLmlzQ29ubmVjdGVkPSBkYi5jb25uZWN0aW9uc1swXS5yZWFkeVN0YXRlXHJcbiAgICBjb25zb2xlLmxvZyhkYi5jb25uZWN0aW9uLmRiLmRhdGFiYXNlTmFtZSlcclxuXHJcbn1cclxuXHJcbmNvbm5lY3Rpb24ub24oXCJjb25uZWN0ZWRcIiwgKCk9PntcclxuICAgIGNvbnNvbGUubG9nKFwiTW9uZ28gaXMgZW5hYmxlXCIpXHJcbn0pXHJcblxyXG5jb25uZWN0aW9uLm9uKFwiZXJyb3JcIiwgKGVycik9PntcclxuICAgIGNvbnNvbGUubG9nKGVycilcclxufSlcclxuXHJcbiJdLCJuYW1lcyI6WyJjb25uZWN0IiwiY29ubmVjdGlvbiIsInJlcXVpcmUiLCJjb25maWciLCJjb25uIiwiaXNDb25uZWN0ZWQiLCJkYkNvbmVjdGlvbiIsImRiIiwicHJvY2VzcyIsImVudiIsIlVSSSIsInVzZU5ld1VybFBhcnNlciIsInVzZVVuaWZpZWRUb3BvbG9neSIsImF1dG9JbmRleCIsImNvbm5lY3Rpb25zIiwicmVhZHlTdGF0ZSIsImNvbnNvbGUiLCJsb2ciLCJkYXRhYmFzZU5hbWUiLCJvbiIsImVyciJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///(api)/./config/db.js\n");
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ books)
+/* harmony export */ });
+/* harmony import */ var _config_db__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(809);
+/* harmony import */ var _model_modelbook__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(155);
+/* harmony import */ var _model_modelcharter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(305);
+/* harmony import */ var _model_modelverse__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(482);
 
-/***/ }),
 
-/***/ "(api)/./model/modelbook.js":
-/*!****************************!*\
-  !*** ./model/modelbook.js ***!
-  \****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mongoose */ \"mongoose\");\n/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(mongoose__WEBPACK_IMPORTED_MODULE_0__);\n\nconst newBook = new mongoose__WEBPACK_IMPORTED_MODULE_0__.Schema({\n    nomenclatura: {\n        type: String\n    },\n    book: {\n        type: String\n    },\n    userCreator: {\n        type: String\n    },\n    version: {\n        type: String\n    },\n    testament: {\n        type: String\n    },\n    order: {\n        type: Number\n    },\n    like: {\n        type: Number,\n        default: 0\n    },\n    view: {\n        type: Number,\n        default: 0\n    },\n    capitulos: [\n        {\n            type: mongoose__WEBPACK_IMPORTED_MODULE_0__.Schema.Types.ObjectId,\n            ref: \"charte\"\n        }\n    ]\n});\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (mongoose__WEBPACK_IMPORTED_MODULE_0__.models.book || (0,mongoose__WEBPACK_IMPORTED_MODULE_0__.model)(\"book\", newBook));\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFwaSkvLi9tb2RlbC9tb2RlbGJvb2suanMuanMiLCJtYXBwaW5ncyI6Ijs7Ozs7O0FBQStDO0FBRy9DLE1BQU1HLE9BQU8sR0FBRyxJQUFJSCw0Q0FBTSxDQUFDO0lBQ3ZCSSxZQUFZLEVBQUU7UUFBQ0MsSUFBSSxFQUFFQyxNQUFNO0tBQUM7SUFDNUJDLElBQUksRUFBRztRQUFDRixJQUFJLEVBQUVDLE1BQU07S0FBQztJQUNyQkUsV0FBVyxFQUFHO1FBQUNILElBQUksRUFBRUMsTUFBTTtLQUFDO0lBQzVCRyxPQUFPLEVBQUU7UUFBRUosSUFBSSxFQUFFQyxNQUFNO0tBQUM7SUFDeEJJLFNBQVMsRUFBRTtRQUFFTCxJQUFJLEVBQUVDLE1BQU07S0FBQztJQUMxQkssS0FBSyxFQUFFO1FBQUVOLElBQUksRUFBRU8sTUFBTTtLQUFDO0lBQ3RCQyxJQUFJLEVBQUU7UUFBRVIsSUFBSSxFQUFFTyxNQUFNO1FBQUVFLE9BQU8sRUFBRSxDQUFDO0tBQUM7SUFDakNDLElBQUksRUFBRTtRQUFFVixJQUFJLEVBQUVPLE1BQU07UUFBRUUsT0FBTyxFQUFFLENBQUM7S0FBQztJQUNqQ0UsU0FBUyxFQUFFO1FBQUM7WUFDUlgsSUFBSSxFQUFFTCwyREFBcUI7WUFDM0JtQixHQUFHLEVBQUUsUUFBUTtTQUNoQjtLQUFDO0NBQ0wsQ0FBQztBQUVGLGlFQUFlakIsaURBQVcsSUFBSUQsK0NBQUssQ0FBQyxNQUFNLEVBQUVFLE9BQU8sQ0FBQyxFQUFDIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vYmlibGlhX2F2X3dlYi8uL21vZGVsL21vZGVsYm9vay5qcz8yNzZlIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7U2NoZW1hLCBtb2RlbCwgbW9kZWxzfSBmcm9tICdtb25nb29zZSc7XHJcblxyXG5cclxuY29uc3QgbmV3Qm9vayA9IG5ldyBTY2hlbWEoe1xyXG4gICAgbm9tZW5jbGF0dXJhOiB7dHlwZTogU3RyaW5nfSxcclxuICAgIGJvb2sgOiB7dHlwZTogU3RyaW5nfSxcclxuICAgIHVzZXJDcmVhdG9yIDoge3R5cGU6IFN0cmluZ30sXHJcbiAgICB2ZXJzaW9uOiB7IHR5cGU6IFN0cmluZ30sXHJcbiAgICB0ZXN0YW1lbnQ6IHsgdHlwZTogU3RyaW5nfSxcclxuICAgIG9yZGVyOiB7IHR5cGU6IE51bWJlcn0sXHJcbiAgICBsaWtlOiB7IHR5cGU6IE51bWJlciwgZGVmYXVsdDogMH0sXHJcbiAgICB2aWV3OiB7IHR5cGU6IE51bWJlciwgZGVmYXVsdDogMH0sXHJcbiAgICBjYXBpdHVsb3M6IFt7XHJcbiAgICAgICAgdHlwZTogU2NoZW1hLlR5cGVzLk9iamVjdElkLFxyXG4gICAgICAgIHJlZjogXCJjaGFydGVcIlxyXG4gICAgfV1cclxufSk7XHJcblxyXG5leHBvcnQgZGVmYXVsdCBtb2RlbHMuYm9vayB8fCBtb2RlbCgnYm9vaycsIG5ld0Jvb2spOyJdLCJuYW1lcyI6WyJTY2hlbWEiLCJtb2RlbCIsIm1vZGVscyIsIm5ld0Jvb2siLCJub21lbmNsYXR1cmEiLCJ0eXBlIiwiU3RyaW5nIiwiYm9vayIsInVzZXJDcmVhdG9yIiwidmVyc2lvbiIsInRlc3RhbWVudCIsIm9yZGVyIiwiTnVtYmVyIiwibGlrZSIsImRlZmF1bHQiLCJ2aWV3IiwiY2FwaXR1bG9zIiwiVHlwZXMiLCJPYmplY3RJZCIsInJlZiJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///(api)/./model/modelbook.js\n");
 
-/***/ }),
+(0,_config_db__WEBPACK_IMPORTED_MODULE_0__/* .dbConection */ .f)();
+async function books(req, res) {
+    let arrayBook = await _model_modelbook__WEBPACK_IMPORTED_MODULE_1__/* ["default"].find */ .Z.find({
+        version: req.body.version
+    }, {
+        _id: 1,
+        book: 1,
+        order: 1,
+        capitulos: 1,
+        testament: 1
+    });
+    let char = await _model_modelcharter__WEBPACK_IMPORTED_MODULE_2__/* ["default"].findOne */ .Z.findOne({
+        version: req.body.version
+    }).populate("verses");
+    //let newObject = Object.assign(char, arrayBook)
+    console.log();
+    res.status(200).json({
+        arrayBook,
+        char
+    });
+};
 
-/***/ "(api)/./model/modelcharter.js":
-/*!*******************************!*\
-  !*** ./model/modelcharter.js ***!
-  \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mongoose */ \"mongoose\");\n/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(mongoose__WEBPACK_IMPORTED_MODULE_0__);\n\nconst newCharte = new mongoose__WEBPACK_IMPORTED_MODULE_0__.Schema({\n    idBook: {\n        type: String\n    },\n    charter: {\n        type: String\n    },\n    order: {\n        type: Number\n    },\n    version: {\n        type: String\n    },\n    userCreator: {\n        type: String\n    },\n    testament: {\n        type: String\n    },\n    like: {\n        type: Number,\n        default: 0\n    },\n    view: {\n        type: Number,\n        default: 0\n    },\n    verses: [\n        {\n            type: mongoose__WEBPACK_IMPORTED_MODULE_0__.Schema.Types.ObjectId,\n            ref: \"verse\"\n        }\n    ]\n});\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (mongoose__WEBPACK_IMPORTED_MODULE_0__.models.charte || (0,mongoose__WEBPACK_IMPORTED_MODULE_0__.model)(\"charte\", newCharte));\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFwaSkvLi9tb2RlbC9tb2RlbGNoYXJ0ZXIuanMuanMiLCJtYXBwaW5ncyI6Ijs7Ozs7O0FBQStDO0FBSy9DLE1BQU1HLFNBQVMsR0FBRyxJQUFJSCw0Q0FBTSxDQUFDO0lBQ3pCSSxNQUFNLEVBQUU7UUFBQ0MsSUFBSSxFQUFFQyxNQUFNO0tBQUM7SUFDdEJDLE9BQU8sRUFBRztRQUFDRixJQUFJLEVBQUVDLE1BQU07S0FBQztJQUN4QkUsS0FBSyxFQUFHO1FBQUNILElBQUksRUFBRUksTUFBTTtLQUFDO0lBQ3RCQyxPQUFPLEVBQUU7UUFBRUwsSUFBSSxFQUFFQyxNQUFNO0tBQUM7SUFDeEJLLFdBQVcsRUFBRztRQUFDTixJQUFJLEVBQUVDLE1BQU07S0FBQztJQUM1Qk0sU0FBUyxFQUFFO1FBQUVQLElBQUksRUFBRUMsTUFBTTtLQUFDO0lBQzFCTyxJQUFJLEVBQUU7UUFBRVIsSUFBSSxFQUFFSSxNQUFNO1FBQUVLLE9BQU8sRUFBRSxDQUFDO0tBQUM7SUFDakNDLElBQUksRUFBRTtRQUFFVixJQUFJLEVBQUVJLE1BQU07UUFBRUssT0FBTyxFQUFFLENBQUM7S0FBQztJQUNqQ0UsTUFBTSxFQUFFO1FBQUM7WUFDTFgsSUFBSSxFQUFFTCwyREFBcUI7WUFDM0JtQixHQUFHLEVBQUUsT0FBTztTQUNmO0tBQUM7Q0FDTCxDQUFDO0FBR0YsaUVBQWVqQixtREFBYSxJQUFJRCwrQ0FBSyxDQUFDLFFBQVEsRUFBRUUsU0FBUyxDQUFDLEVBQUMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9iaWJsaWFfYXZfd2ViLy4vbW9kZWwvbW9kZWxjaGFydGVyLmpzP2YyZTgiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHtTY2hlbWEsIG1vZGVsLCBtb2RlbHN9IGZyb20gJ21vbmdvb3NlJztcclxuXHJcblxyXG5cclxuXHJcbmNvbnN0IG5ld0NoYXJ0ZSA9IG5ldyBTY2hlbWEoe1xyXG4gICAgaWRCb29rOiB7dHlwZTogU3RyaW5nfSxcclxuICAgIGNoYXJ0ZXIgOiB7dHlwZTogU3RyaW5nfSxcclxuICAgIG9yZGVyIDoge3R5cGU6IE51bWJlcn0sXHJcbiAgICB2ZXJzaW9uOiB7IHR5cGU6IFN0cmluZ30sXHJcbiAgICB1c2VyQ3JlYXRvciA6IHt0eXBlOiBTdHJpbmd9LFxyXG4gICAgdGVzdGFtZW50OiB7IHR5cGU6IFN0cmluZ30sXHJcbiAgICBsaWtlOiB7IHR5cGU6IE51bWJlciwgZGVmYXVsdDogMH0sXHJcbiAgICB2aWV3OiB7IHR5cGU6IE51bWJlciwgZGVmYXVsdDogMH0sXHJcbiAgICB2ZXJzZXM6IFt7XHJcbiAgICAgICAgdHlwZTogU2NoZW1hLlR5cGVzLk9iamVjdElkLFxyXG4gICAgICAgIHJlZjogXCJ2ZXJzZVwiXHJcbiAgICB9XVxyXG59KTtcclxuXHJcblxyXG5leHBvcnQgZGVmYXVsdCBtb2RlbHMuY2hhcnRlIHx8IG1vZGVsKCdjaGFydGUnLCBuZXdDaGFydGUpOyJdLCJuYW1lcyI6WyJTY2hlbWEiLCJtb2RlbCIsIm1vZGVscyIsIm5ld0NoYXJ0ZSIsImlkQm9vayIsInR5cGUiLCJTdHJpbmciLCJjaGFydGVyIiwib3JkZXIiLCJOdW1iZXIiLCJ2ZXJzaW9uIiwidXNlckNyZWF0b3IiLCJ0ZXN0YW1lbnQiLCJsaWtlIiwiZGVmYXVsdCIsInZpZXciLCJ2ZXJzZXMiLCJUeXBlcyIsIk9iamVjdElkIiwicmVmIiwiY2hhcnRlIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///(api)/./model/modelcharter.js\n");
-
-/***/ }),
-
-/***/ "(api)/./model/modelverse.js":
-/*!*****************************!*\
-  !*** ./model/modelverse.js ***!
-  \*****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mongoose */ \"mongoose\");\n/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(mongoose__WEBPACK_IMPORTED_MODULE_0__);\n\nconst newVerse = new mongoose__WEBPACK_IMPORTED_MODULE_0__.Schema({\n    title: {\n        type: String\n    },\n    originCharter: {\n        type: String\n    },\n    numero: {\n        type: Number\n    },\n    versiculo: {\n        type: String\n    },\n    version: {\n        type: String\n    },\n    userCreator: {\n        type: String\n    },\n    testament: {\n        type: String\n    },\n    like: {\n        type: Number,\n        default: 0\n    },\n    view: {\n        type: Number,\n        default: 0\n    }\n});\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (mongoose__WEBPACK_IMPORTED_MODULE_0__.models.verse || (0,mongoose__WEBPACK_IMPORTED_MODULE_0__.model)(\"verse\", newVerse));\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFwaSkvLi9tb2RlbC9tb2RlbHZlcnNlLmpzLmpzIiwibWFwcGluZ3MiOiI7Ozs7OztBQUErQztBQUsvQyxNQUFNRyxRQUFRLEdBQUcsSUFBSUgsNENBQU0sQ0FBQztJQUN4QkksS0FBSyxFQUFFO1FBQUVDLElBQUksRUFBRUMsTUFBTTtLQUFDO0lBQ3RCQyxhQUFhLEVBQUU7UUFBRUYsSUFBSSxFQUFFQyxNQUFNO0tBQUM7SUFDOUJFLE1BQU0sRUFBRztRQUFDSCxJQUFJLEVBQUVJLE1BQU07S0FBQztJQUN2QkMsU0FBUyxFQUFFO1FBQUVMLElBQUksRUFBRUMsTUFBTTtLQUFDO0lBQzFCSyxPQUFPLEVBQUU7UUFBRU4sSUFBSSxFQUFFQyxNQUFNO0tBQUM7SUFDeEJNLFdBQVcsRUFBRztRQUFDUCxJQUFJLEVBQUVDLE1BQU07S0FBQztJQUM1Qk8sU0FBUyxFQUFFO1FBQUVSLElBQUksRUFBRUMsTUFBTTtLQUFDO0lBQzFCUSxJQUFJLEVBQUU7UUFBRVQsSUFBSSxFQUFFSSxNQUFNO1FBQUVNLE9BQU8sRUFBRSxDQUFDO0tBQUM7SUFDakNDLElBQUksRUFBRTtRQUFFWCxJQUFJLEVBQUVJLE1BQU07UUFBRU0sT0FBTyxFQUFFLENBQUM7S0FBQztDQUNwQyxDQUFDO0FBRUYsaUVBQWViLGtEQUFZLElBQUlELCtDQUFLLENBQUMsT0FBTyxFQUFFRSxRQUFRLENBQUMsRUFBQyIsInNvdXJjZXMiOlsid2VicGFjazovL2JpYmxpYV9hdl93ZWIvLi9tb2RlbC9tb2RlbHZlcnNlLmpzP2YxNjMiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHtTY2hlbWEsIG1vZGVsLCBtb2RlbHN9IGZyb20gJ21vbmdvb3NlJztcclxuXHJcblxyXG5cclxuXHJcbmNvbnN0IG5ld1ZlcnNlID0gbmV3IFNjaGVtYSh7XHJcbiAgICB0aXRsZTogeyB0eXBlOiBTdHJpbmd9LFxyXG4gICAgb3JpZ2luQ2hhcnRlcjogeyB0eXBlOiBTdHJpbmd9LFxyXG4gICAgbnVtZXJvIDoge3R5cGU6IE51bWJlcn0sXHJcbiAgICB2ZXJzaWN1bG86IHsgdHlwZTogU3RyaW5nfSxcclxuICAgIHZlcnNpb246IHsgdHlwZTogU3RyaW5nfSxcclxuICAgIHVzZXJDcmVhdG9yIDoge3R5cGU6IFN0cmluZ30sXHJcbiAgICB0ZXN0YW1lbnQ6IHsgdHlwZTogU3RyaW5nfSxcclxuICAgIGxpa2U6IHsgdHlwZTogTnVtYmVyLCBkZWZhdWx0OiAwfSxcclxuICAgIHZpZXc6IHsgdHlwZTogTnVtYmVyLCBkZWZhdWx0OiAwfSxcclxufSk7XHJcblxyXG5leHBvcnQgZGVmYXVsdCBtb2RlbHMudmVyc2UgfHwgbW9kZWwoJ3ZlcnNlJywgbmV3VmVyc2UpOyJdLCJuYW1lcyI6WyJTY2hlbWEiLCJtb2RlbCIsIm1vZGVscyIsIm5ld1ZlcnNlIiwidGl0bGUiLCJ0eXBlIiwiU3RyaW5nIiwib3JpZ2luQ2hhcnRlciIsIm51bWVybyIsIk51bWJlciIsInZlcnNpY3VsbyIsInZlcnNpb24iLCJ1c2VyQ3JlYXRvciIsInRlc3RhbWVudCIsImxpa2UiLCJkZWZhdWx0IiwidmlldyIsInZlcnNlIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///(api)/./model/modelverse.js\n");
-
-/***/ }),
-
-/***/ "(api)/./pages/api/getBooks/getbook.js":
-/*!***************************************!*\
-  !*** ./pages/api/getBooks/getbook.js ***!
-  \***************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ books)\n/* harmony export */ });\n/* harmony import */ var _config_db__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../config/db */ \"(api)/./config/db.js\");\n/* harmony import */ var _model_modelbook__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../model/modelbook */ \"(api)/./model/modelbook.js\");\n/* harmony import */ var _model_modelcharter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../model/modelcharter */ \"(api)/./model/modelcharter.js\");\n/* harmony import */ var _model_modelverse__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../model/modelverse */ \"(api)/./model/modelverse.js\");\n\n\n\n\n(0,_config_db__WEBPACK_IMPORTED_MODULE_0__.dbConection)();\nasync function books(req, res) {\n    let arrayBook = await _model_modelbook__WEBPACK_IMPORTED_MODULE_1__[\"default\"].find({\n        version: req.body.version\n    }, {\n        _id: 1,\n        book: 1,\n        order: 1,\n        capitulos: 1,\n        testament: 1\n    });\n    let char = await _model_modelcharter__WEBPACK_IMPORTED_MODULE_2__[\"default\"].findOne({\n        version: req.body.version\n    }).populate(\"verses\");\n    //let newObject = Object.assign(char, arrayBook)\n    console.log();\n    res.status(200).json({\n        arrayBook,\n        char\n    });\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFwaSkvLi9wYWdlcy9hcGkvZ2V0Qm9va3MvZ2V0Ym9vay5qcy5qcyIsIm1hcHBpbmdzIjoiOzs7Ozs7OztBQUErQztBQUNGO0FBQ0s7QUFDSDtBQUUvQ0EsdURBQVcsRUFBRTtBQUVFLGVBQWVJLEtBQUssQ0FBQ0MsR0FBRyxFQUFFQyxHQUFHLEVBQUM7SUFDN0MsSUFBSUMsU0FBUyxHQUFHLE1BQU1OLDZEQUFVLENBQUM7UUFBQ1EsT0FBTyxFQUFFSixHQUFHLENBQUNLLElBQUksQ0FBQ0QsT0FBTztLQUFDLEVBQUU7UUFBQ0UsR0FBRyxFQUFDLENBQUM7UUFBRUMsSUFBSSxFQUFDLENBQUM7UUFBRUMsS0FBSyxFQUFDLENBQUM7UUFBRUMsU0FBUyxFQUFDLENBQUM7UUFBRUMsU0FBUyxFQUFDLENBQUM7S0FBQyxDQUFDO0lBQ2pILElBQUlDLElBQUksR0FBRyxNQUFNZCxtRUFBZSxDQUFDO1FBQUNPLE9BQU8sRUFBRUosR0FBRyxDQUFDSyxJQUFJLENBQUNELE9BQU87S0FBQyxDQUFDLENBQUNTLFFBQVEsQ0FBQyxRQUFRLENBQUM7SUFDaEYsZ0RBQWdEO0lBQ2hEQyxPQUFPLENBQUNDLEdBQUcsRUFBRTtJQUNiZCxHQUFHLENBQUNlLE1BQU0sQ0FBQyxHQUFHLENBQUMsQ0FBQ0MsSUFBSSxDQUFDO1FBQUNmLFNBQVM7UUFBRVMsSUFBSTtLQUFDLENBQUM7Q0FDdEMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9iaWJsaWFfYXZfd2ViLy4vcGFnZXMvYXBpL2dldEJvb2tzL2dldGJvb2suanM/YzI1MCJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQge2RiQ29uZWN0aW9ufSBmcm9tICcuLi8uLi8uLi9jb25maWcvZGInO1xyXG5pbXBvcnQgQm9va3MgZnJvbSAnLi4vLi4vLi4vbW9kZWwvbW9kZWxib29rJztcclxuaW1wb3J0IENoYXJ0ZXIgZnJvbSAnLi4vLi4vLi4vbW9kZWwvbW9kZWxjaGFydGVyJztcclxuaW1wb3J0IFZlcnNlcyBmcm9tICcuLi8uLi8uLi9tb2RlbC9tb2RlbHZlcnNlJztcclxuXHJcbmRiQ29uZWN0aW9uKClcclxuXHJcbmV4cG9ydCBkZWZhdWx0IGFzeW5jIGZ1bmN0aW9uIGJvb2tzKHJlcSwgcmVzKXtcclxubGV0IGFycmF5Qm9vayA9IGF3YWl0IEJvb2tzLmZpbmQoe3ZlcnNpb246IHJlcS5ib2R5LnZlcnNpb259LCB7X2lkOjEsIGJvb2s6MSwgb3JkZXI6MSwgY2FwaXR1bG9zOjEsIHRlc3RhbWVudDoxfSlcclxubGV0IGNoYXIgPSBhd2FpdCBDaGFydGVyLmZpbmRPbmUoe3ZlcnNpb246IHJlcS5ib2R5LnZlcnNpb259KS5wb3B1bGF0ZShcInZlcnNlc1wiKVxyXG4vL2xldCBuZXdPYmplY3QgPSBPYmplY3QuYXNzaWduKGNoYXIsIGFycmF5Qm9vaylcclxuY29uc29sZS5sb2coKVxyXG5yZXMuc3RhdHVzKDIwMCkuanNvbih7YXJyYXlCb29rLCBjaGFyfSlcclxufSJdLCJuYW1lcyI6WyJkYkNvbmVjdGlvbiIsIkJvb2tzIiwiQ2hhcnRlciIsIlZlcnNlcyIsImJvb2tzIiwicmVxIiwicmVzIiwiYXJyYXlCb29rIiwiZmluZCIsInZlcnNpb24iLCJib2R5IiwiX2lkIiwiYm9vayIsIm9yZGVyIiwiY2FwaXR1bG9zIiwidGVzdGFtZW50IiwiY2hhciIsImZpbmRPbmUiLCJwb3B1bGF0ZSIsImNvbnNvbGUiLCJsb2ciLCJzdGF0dXMiLCJqc29uIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///(api)/./pages/api/getBooks/getbook.js\n");
 
 /***/ })
 
@@ -90,7 +66,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 var __webpack_require__ = require("../../../webpack-api-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = (__webpack_exec__("(api)/./pages/api/getBooks/getbook.js"));
+var __webpack_exports__ = __webpack_require__.X(0, [442], () => (__webpack_exec__(335)));
 module.exports = __webpack_exports__;
 
 })();

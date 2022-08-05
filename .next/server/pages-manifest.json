@@ -1,6 +1,10 @@
 {
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
+  "/api/getBooks/getCharter": "pages/api/getBooks/getCharter.js",
+  "/api/getBooks/getbook": "pages/api/getBooks/getbook.js",
+  "/api/hello": "pages/api/hello.js",
+  "/": "pages/index.html",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js"
+  "/404": "pages/404.html"
 }
