@@ -31,10 +31,49 @@ ul{
 .header{
   background-color: var(--bg-body-header);
   padding: 20px;
-
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
 }
 .logo1{
-  width: 125px;
+  width: 100px;
+}
+.header i {
+  font-size: 25px;
+  color: var(--input-fiel);
+}
+
+
+/*###################### footer ######################### */
+.footer {
+  background-color: var(--bg-body-header);
+}
+.footer-row{
+  height: 20em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+}
+.text-footer-1{
+  color: var(--input-fiel);
+  font-weight: bold;
+  font-size: 20px;
+}
+.text-footer-3{
+  color: var(--l-red);
+  font-weight: bold;
+  font-size: 20px;
+}
+.text-footer-2{
+  color: var(--input-fiel);
+  font-weight: 400;
+  font-size: 12px;
+}
+.text-footer-icon{
+  color: var(--input-fiel);
+  font-size: 20px;
 }
 
 
@@ -158,6 +197,43 @@ li {
   border: var(--l-gray) solid 1px;
   background-color: var(--input-fiel);
 }
+.social-1{
+  padding: 0.5em;
+  border-bottom: var(--input-fiel) solid 4px;
+}
+.social-1:hover{
+  border-bottom: var(--l-red) solid 4px;
+}
+.box-social{
+  margin: 1em;
+  background-color: var(--bg-body-header);
+  border-radius: 8px;
+  color: var(--input-fiel);
+}
+.box-deck h6 span {
+  font-family :Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+}
+.box-deck h6 {
+  background-color: var(--l-hueso);
+  padding: 6px 10px;
+}
+.box-deck h5 {
+  background-color: var(--l-hueso);
+  padding: 6px 10px;
+}
+.box-deck h6:hover {
+   background-color: var(--bg-body-header);
+   color: var(--input-fiel);
+   padding: 6px 10px;
+   border-radius: 8px;
+}
+
+
+
+/*#################### textos #################*/
+
 .text-1{
   font-size: 16px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -196,14 +272,14 @@ li {
 }
 
 .input-per{
-  width: 23em;
+  width: 90%;
   border: var(--l-gray) solid 2px;
   outline: none;
   /*border-radius: 6px;*/
 }
 
 input::placeholder {
-  font-weight: bold;
+  font-weight: 600;
   opacity: .5;
   padding-left: 5px;
   color: var(--l-gray);
@@ -223,9 +299,9 @@ select option {
 
 /*########################## libros contenedor ###################*/
 .contenedor-libro{
-  padding: 2em 3em;
-  margin: 1em;
-  background-color: var(--bg-body-backgroud);
+  padding: 1em 2em;
+  margin: 0.5em;
+  background-color: var(--l-hueso);
   border-radius: 8px;
 }
 .icon-text-danger{

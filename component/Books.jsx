@@ -6,7 +6,7 @@ const Books = ({ books, changeNavView, selectBook }) => {
 
   const [estado, setEstado] = useState("vacio");
 
-  React.useEffect(() => {
+  useEffect(() => {
     divTest();
   }, []);
 

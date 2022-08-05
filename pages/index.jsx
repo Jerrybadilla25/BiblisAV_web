@@ -4,7 +4,7 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Container from "../component/Container";
 
-import NavHelp from "../component/navhelp";
+
 import Libros from "../component/body/libros";
 import Cuerpo from "../component/body/cuerpo";
 import NavFhone from "../component/navFhone";
@@ -12,13 +12,19 @@ import Books from "../component/Books";
 import Charter from "../component/Charter";
 
 export default function Home() {
-  //const RUTA = "http://localhost:3000";
-  const RUTA = "http://bibliaav"
+  const RUTA = "http://localhost:3000";
+  //const RUTA = "http://bibliaav"
   const [versionView, setVersionView] = useState(false);
   const [version, setVersion] = useState("Reina_Valera_1960");
   const [books, setBooks] = useState(null);
   const [charterView, setCharterView] = useState(null);
   const [numberCharter, setNumberCharter] = useState(true);
+
+  const [decks, setDeck]=useState([
+      { _id: '6274668957aefaff092e32d4', charter: 'Apocalipsis 22' },
+      { _id: '62732467a09db64c94514890', charter: 'Genesis 2' }
+    ]
+  )
 
   const [charterNumber, setCharterNumber] = useState(null);
 
@@ -26,8 +32,29 @@ export default function Home() {
   const [bodyView, setBodyView] = useState(true);
   const [charterViews, setCharterViews] = useState(true);
 
-  React.useEffect(() => {
+  useEffect(() => {
+
+    async function getBooks (){
+      try {
+        const data = await fetch(`${RUTA}/api/getBooks/getbook`, {
+          method: "POST",
+          body: JSON.stringify({ version: version }),
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+        });
+        const res = await data.json();
+        setBooks(res.arrayBook);
+        setCharterView(res.char);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+
     getBooks();
+    
   }, []);
 
   const isVersionView = () => {
@@ -49,8 +76,8 @@ export default function Home() {
   };
 
   const changeNavView = () => {
-    setNavView(!navView);
-    setBodyView(!bodyView);
+    setNavView(false);
+    setBodyView(false);
   };
 
   const getCharter = async (id) => {
@@ -64,16 +91,19 @@ export default function Home() {
         },
       });
       const res = await data.json();
-      setCharterView(res);
+      console.log(res)
+      setCharterView(res.data1);
+      setDeck(res.deck.deck)
       setCharterNumber(null);
-      setNavView(!navView);
+      setNavView(true);
       setCharterViews(true);
-      setBodyView(!bodyView);
+      setBodyView(true);
     } catch (error) {
       console.log(error);
     }
   };
 
+  /*
   const getBooks = async () => {
     try {
       const data = await fetch(`${RUTA}/api/getBooks/getbook`, {
@@ -91,46 +121,60 @@ export default function Home() {
       console.log(error);
     }
   };
+  */
 
-  return (
-    <Container>
-      {navView ? (
-        <NavFhone changeNavView={changeNavView} />
-      ) : (
-        <>
-          {charterViews ? (
-            <Books
+  if(books !==null){
+    return (
+      <Container>
+        {navView ? (
+          <NavFhone changeNavView={changeNavView} />
+        ) : (
+          <>
+            {charterViews ? (
+              <Books
+                books={books}
+                changeNavView={changeNavView}
+                selectBook={selectBook}
+              />
+            ) : (
+              <Charter
+                charterNumber={charterNumber}
+                rewCharter={rewCharter}
+                getCharter={getCharter}
+              />
+            )}
+          </>
+        )}
+  
+        <div className="row">
+          <div className="col-sm-12 col-md-3 col-xl-2 display-none">
+            <Libros
               books={books}
-              changeNavView={changeNavView}
               selectBook={selectBook}
-            />
-          ) : (
-            <Charter
               charterNumber={charterNumber}
-              rewCharter={rewCharter}
+              atras={atras}
               getCharter={getCharter}
             />
-          )}
-        </>
-      )}
-
-      <div className="row">
-        <div className="col-sm-12 col-md-3 col-xl-2 display-none">
-          <Libros
-            books={books}
-            selectBook={selectBook}
-            charterNumber={charterNumber}
-            atras={atras}
+          </div>
+          <div className="col-sm-12 col-md-7 col-xl-8 body-per">
+            {bodyView ? 
+            <Cuerpo 
+            charterView={charterView} 
+            changeNavView={changeNavView}
+            decks={decks}
             getCharter={getCharter}
-          />
+            /> : <h6></h6>}
+          </div>
+          <div className="col-sm-12 col-md-2 col-xl-2 box-libro display-none"></div>
         </div>
-        <div className="col-sm-12 col-md-7 col-xl-8 body-per">
-          {bodyView ? <Cuerpo charterView={charterView} /> : <h6></h6>}
-        </div>
-        <div className="col-sm-12 col-md-2 col-xl-2 box-libro display-none"></div>
-      </div>
-    </Container>
-  );
+      </Container>
+    );
+  }
+
+  return(
+    <h1>Hola mundo</h1>
+  )
+  
 }
 
 /*

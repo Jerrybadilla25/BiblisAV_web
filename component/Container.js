@@ -3,6 +3,7 @@ import React from 'react';
 import Head from 'next/head';
 import Header from '../component/header';
 import Script from 'next/script'
+import Footer from '../component/footer/footer';
 
 
 
@@ -24,7 +25,7 @@ const Container = (props) => {
             <div>
                 {props.children}
             </div>
-            
+            <Footer/>
             <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"/>
                 
         </div>
