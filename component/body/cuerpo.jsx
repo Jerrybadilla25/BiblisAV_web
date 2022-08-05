@@ -25,9 +25,9 @@ const Cuerpo = ({ charterView, changeNavView, decks, getCharter }) => {
               <i class="bi bi-caret-left"></i> <span>{decks[0].charter}</span>
             </h6>
 
-            <h5 className="text-1" onClick={changeNavView}>
+            <h6 className="text-1" onClick={changeNavView}>
               {charterView.charter} <i class="bi bi-caret-down-fill"></i>{" "}
-            </h5>
+            </h6>
 
             <h6 onClick={() => getCharter(decks[1]._id)}>
               {" "}
@@ -40,8 +40,8 @@ const Cuerpo = ({ charterView, changeNavView, decks, getCharter }) => {
       </div>
 
       <div className="body-per-1">
-        <h1 className="text-1">{charterView.charter}</h1>
-        <h2 className="text-2">{charterView.testament}</h2>
+        <h1 className="text-1 mb-5">{charterView.charter}</h1>
+        
         {charterView.verses.map((x) => (
           <div key={x._id}>
             <p className="text-verses">
@@ -50,6 +50,13 @@ const Cuerpo = ({ charterView, changeNavView, decks, getCharter }) => {
             </p>
           </div>
         ))}
+        <div className='box-like'>
+          <div className="d-flex justify-content-center">
+            <h6>Me gusta</h6>
+            <i class="bi bi-heart"></i>
+          </div>
+        </div>
+        <h2 className="text-2 text-center py-3">{charterView.testament}</h2>
       </div>
     </div>
   );

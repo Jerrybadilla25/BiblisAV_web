@@ -49,7 +49,7 @@ ul{
   background-color: var(--bg-body-header);
 }
 .footer-row{
-  height: 20em;
+  height: 10em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -207,7 +207,7 @@ li {
 .box-social{
   margin: 1em;
   background-color: var(--bg-body-header);
-  border-radius: 8px;
+  /*border-radius: 8px;*/
   color: var(--input-fiel);
 }
 .box-deck h6 span {
@@ -216,22 +216,29 @@ li {
   font-size: 13px;
 }
 .box-deck h6 {
-  background-color: var(--l-hueso);
-  padding: 6px 10px;
-}
-.box-deck h5 {
-  background-color: var(--l-hueso);
-  padding: 6px 10px;
+  border-bottom: var(--l-hueso) solid 2px;
+  padding: 6px 1px;
 }
 .box-deck h6:hover {
-   background-color: var(--bg-body-header);
-   color: var(--input-fiel);
-   padding: 6px 10px;
-   border-radius: 8px;
+  border-bottom: var(--l-red) solid 2px;
+  color: var(--bg-body-header);
+}
+.box-like {
+  background-color: var( --l-hueso);
+  padding: 0.5em 0em;
+}
+.box-like:hover {
+  background-color: var(--bg-body-navHelp);
+}
+.box-like h6{
+  padding: 0em 1em;
+  font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
-
-
+.box-like i {
+  color: var(--l-red);
+  font-weight: bold;
+}
 /*#################### textos #################*/
 
 .text-1{
@@ -272,9 +279,10 @@ li {
 }
 
 .input-per{
-  width: 90%;
+  width: 96%;
   border: var(--l-gray) solid 2px;
   outline: none;
+  margin: 0px 3px;
   /*border-radius: 6px;*/
 }
 
@@ -290,6 +298,7 @@ input::placeholder {
   outline: none;
   /*border-radius: 6px;*/
   padding: 6px 2px;
+  margin: 0px 3px;
 }
 select option {
   border: var(--l-gray) solid 2px;

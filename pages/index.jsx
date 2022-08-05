@@ -12,8 +12,8 @@ import Books from "../component/Books";
 import Charter from "../component/Charter";
 
 export default function Home() {
-  const RUTA = "http://localhost:3000";
-  //const RUTA = "http://bibliaav"
+  //const RUTA = "http://localhost:3000";
+  const RUTA = "http://bibliaav"
   const [versionView, setVersionView] = useState(false);
   const [version, setVersion] = useState("Reina_Valera_1960");
   const [books, setBooks] = useState(null);
@@ -123,7 +123,6 @@ export default function Home() {
   };
   */
 
-  if(books !==null){
     return (
       <Container>
         {navView ? (
@@ -169,11 +168,9 @@ export default function Home() {
         </div>
       </Container>
     );
-  }
+  
 
-  return(
-    <h1>Hola mundo</h1>
-  )
+  
   
 }
 
