@@ -7,7 +7,7 @@ const Charter = ( { charterNumber, rewCharter, getCharter }) => {
                 <div className='d-flex justify-content-between border-buton'>
                 <h5 className='text-center'>{charterNumber.book}</h5>
                 <button className="btn btn-per" onClick={rewCharter} >
-                   <i class="bi bi-x-lg icon-text-danger"></i>
+                   <i className="bi bi-x-lg icon-text-danger"></i>
                 </button>
                 </div>
                 

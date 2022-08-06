@@ -22,18 +22,18 @@ const Cuerpo = ({ charterView, changeNavView, decks, getCharter }) => {
         {decks && (
           <div className="d-flex justify-content-evenly box-deck">
             <h6 onClick={() => getCharter(decks[0]._id)}>
-              <i class="bi bi-caret-left"></i> <span>{decks[0].charter}</span>
+              <i className="bi bi-caret-left"></i> <span>{decks[0].charter}</span>
             </h6>
 
             <h6 className="text-1" onClick={changeNavView}>
-              {charterView.charter} <i class="bi bi-caret-down-fill"></i>{" "}
+              {charterView.charter} <i className="bi bi-caret-down-fill"></i>{" "}
             </h6>
 
             <h6 onClick={() => getCharter(decks[1]._id)}>
               {" "}
               <span>
                 {decks[1].charter}
-              </span> <i class="bi bi-caret-right"></i>{" "}
+              </span> <i className="bi bi-caret-right"></i>{" "}
             </h6>
           </div>
         )}
@@ -53,7 +53,7 @@ const Cuerpo = ({ charterView, changeNavView, decks, getCharter }) => {
         <div className='box-like'>
           <div className="d-flex justify-content-center">
             <h6>Me gusta</h6>
-            <i class="bi bi-heart"></i>
+            <i className="bi bi-heart"></i>
           </div>
         </div>
         <h2 className="text-2 text-center py-3">{charterView.testament}</h2>

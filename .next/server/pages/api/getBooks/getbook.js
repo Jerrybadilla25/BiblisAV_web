@@ -48,8 +48,6 @@ async function books(req, res) {
     let char = await _model_modelcharter__WEBPACK_IMPORTED_MODULE_2__/* ["default"].findOne */ .Z.findOne({
         version: req.body.version
     }).populate("verses");
-    //let newObject = Object.assign(char, arrayBook)
-    console.log();
     res.status(200).json({
         arrayBook,
         char

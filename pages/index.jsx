@@ -13,7 +13,7 @@ import Charter from "../component/Charter";
 
 export default function Home() {
   //const RUTA = "http://localhost:3000";
-  const RUTA = "http://bibliaav"
+  const RUTA = "http://bibliaav.ml"
   const [versionView, setVersionView] = useState(false);
   const [version, setVersion] = useState("Reina_Valera_1960");
   const [books, setBooks] = useState(null);
@@ -32,13 +32,12 @@ export default function Home() {
   const [bodyView, setBodyView] = useState(true);
   const [charterViews, setCharterViews] = useState(true);
 
-  useEffect((version) => {
-    const vers = version
-    async function getBooks (vers){
+  useEffect(() => {
+    async function getBooks (){
       try {
         const data = await fetch(`${RUTA}/api/getBooks/getbook`, {
           method: "POST",
-          body: JSON.stringify({ version: vers }),
+          body: JSON.stringify({ version: version }),
           headers: {
             "Content-Type": "application/json",
             Accept: "application/json",
