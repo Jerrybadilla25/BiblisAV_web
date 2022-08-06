@@ -10,7 +10,7 @@ info.txt
 /coverage
 
 # next.js
-/.next/
+
 /out/
 
 # production
