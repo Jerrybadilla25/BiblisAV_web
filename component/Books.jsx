@@ -25,8 +25,8 @@ const Books = ({ books, changeNavView, selectBook }) => {
   if (estado === "Books") {
     return (
       <div className="contenedor-libro">
-        <div className="row">
-          <div className="col-sm-5">
+        <div className="row-per">
+          <div className="">
             <h4>Antiguo testamento</h4>
             {test1.map((x) => (
               <div key={x._id} onClick={() => selectBook(x._id)}>
@@ -34,7 +34,7 @@ const Books = ({ books, changeNavView, selectBook }) => {
               </div>
             ))}
           </div>
-          <div className="col-sm-5">
+          <div className="">
             <h4>Nuevo testamento</h4>
             {test2.map((x) => (
               <div key={x._id} onClick={() => selectBook(x._id)}>
@@ -42,7 +42,7 @@ const Books = ({ books, changeNavView, selectBook }) => {
               </div>
             ))}
           </div>
-          <div className="col-sm-1 ">
+          <div className=" ">
             <button className="btn btn-per" onClick={changeNavView}>
               <i class="bi bi-x-lg icon-text-danger"></i>
             </button>

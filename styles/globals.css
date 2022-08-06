@@ -192,7 +192,7 @@ li {
  background-color: var(--l-hueso);
 }
 .body-per-1{
-  padding: 2em 4em;
+  padding: 1.5em 1em;
   margin: 1em 0.2em;
   border: var(--l-gray) solid 1px;
   background-color: var(--input-fiel);
@@ -308,10 +308,15 @@ select option {
 
 /*########################## libros contenedor ###################*/
 .contenedor-libro{
-  padding: 1em 2em;
+  padding: 0.5em 0.5em;
   margin: 0.5em;
   background-color: var(--l-hueso);
   border-radius: 8px;
+}
+.row-per{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .icon-text-danger{
   color: var(--l-red);
@@ -321,18 +326,22 @@ select option {
   color: var(--bg-body-header);
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   padding-bottom: 1em;
-  font-size: 1.3em;
+  font-size: 1em;
   
 }
 .contenedor-libro h6{
   padding: 2px 10px;
+  font-size: 0.8em;
 }
 .contenedor-libro div div div{
   padding: 2px;
 }
 .contenedor-libro div div div:hover{
-  background-color: var(--bg-body-header);
+  /*background-color: var(--bg-body-header);*/
   color: var(--input-fiel);
+}
+.contenedor-libro div h5 {
+  font-size: 1em;
 }
 .charter-number{
   display: flex;
@@ -348,7 +357,7 @@ select option {
 }
 .charter-number div p{
   margin: 6px 0px !important;
-  font-size: 16px;
+  font-size: 0.8em;
   font-weight: bold;
   font-family: 'Courier New', Courier, monospace;
   text-align: center;

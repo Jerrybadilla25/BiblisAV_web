@@ -75,8 +75,8 @@ export default function Home() {
   };
 
   const changeNavView = () => {
-    setNavView(false);
-    setBodyView(false);
+    setNavView(!navView);
+    setBodyView(!bodyView);
   };
 
   const getCharter = async (id) => {
@@ -139,6 +139,7 @@ export default function Home() {
                 charterNumber={charterNumber}
                 rewCharter={rewCharter}
                 getCharter={getCharter}
+                changeNavView={changeNavView}
               />
             )}
           </>

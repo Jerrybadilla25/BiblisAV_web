@@ -1,14 +1,20 @@
 import React from 'react';
 
-const Charter = ( { charterNumber, rewCharter, getCharter }) => {
+const Charter = ( { charterNumber, rewCharter, getCharter, changeNavView }) => {
     return (
         <div className='contenedor-libro vh-100'>
             <div className='row'>
                 <div className='d-flex justify-content-between border-buton'>
                 <h5 className='text-center'>{charterNumber.book}</h5>
-                <button className="btn btn-per" onClick={rewCharter} >
-                   <i className="bi bi-x-lg icon-text-danger"></i>
+                <div>
+                   <button className="btn btn-per mx-4" onClick={rewCharter} >
+                   <i className="bi bi-arrow-return-left icon-text-danger"></i>
                 </button>
+                <button className="btn btn-per" onClick={changeNavView} >
+                   <i className="bi bi-x-lg icon-text-danger"></i>
+                </button> 
+                </div>
+                
                 </div>
                 
                     
