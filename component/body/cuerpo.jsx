@@ -1,19 +1,23 @@
 import React from "react";
 
-const Cuerpo = ({ charterView, changeNavView, decks, getCharter }) => {
+const Cuerpo = ({ charterView, changeNavView, decks, getCharter, fontText }) => {
   if (charterView === null) {
-    return <div>vacio</div>;
+    return (
+      <div className="cargando">
+        <h5>Cargando...</h5>
+      </div>
+    );
   }
 
   return (
-    <div>
+    <div className="row">
       <div>
         <div className="d-flex justify-content-evenly box-social ">
-          <h6 className="social-1">
-            <span className="mx-2">Vistas</span> {charterView.like}
+          <h6 className="social-1 myDIV">
+            <span className="mx-2 myDIV">Vistas</span> {charterView.like}
           </h6>
-          <h6 className="social-1">
-            <span className="mx-2">Likes</span>
+          <h6 className="social-1 myDIV">
+            <span className="mx-2 myDIV">Likes</span>
             {charterView.view}
           </h6>
         </div>
@@ -21,42 +25,42 @@ const Cuerpo = ({ charterView, changeNavView, decks, getCharter }) => {
       <div>
         {decks && (
           <div className="d-flex justify-content-evenly box-deck">
-            <h6 onClick={() => getCharter(decks[0]._id)}>
-              <i className="bi bi-caret-left"></i> <span>{decks[0].charter}</span>
+            <h6  onClick={() => getCharter(decks[0]._id)}>
+              <i className="bi bi-caret-left myDIV"></i> <span className="myDIV">{decks[0].charter}</span>
             </h6>
 
-            <h6 className="text-1" onClick={changeNavView}>
-              {charterView.charter} <i className="bi bi-caret-down-fill"></i>{" "}
+            <h6 className="myDIV" onClick={changeNavView}>
+              {charterView.charter} <i className="bi bi-caret-down-fill myDIV"></i>{" "}
             </h6>
 
-            <h6 onClick={() => getCharter(decks[1]._id)}>
+            <h6  onClick={() => getCharter(decks[1]._id)}>
               {" "}
-              <span>
+              <span className="myDIV">
                 {decks[1].charter}
-              </span> <i className="bi bi-caret-right"></i>{" "}
+              </span> <i className="bi bi-caret-right myDIV"></i>{" "}
             </h6>
           </div>
         )}
       </div>
 
       <div className="body-per-1">
-        <h1 className="text-1 mb-5">{charterView.charter}</h1>
+        <h1 className="text-1 mb-5 myDIV1">{charterView.charter}</h1>
         
         {charterView.verses.map((x) => (
           <div key={x._id}>
-            <p className="text-verses">
+            <p className="text-verses myDIV">
               {" "}
-              <span className="me-2 text-2">{x.numero}</span> {x.versiculo}
+              <span className="me-2 text-2 myDIV">{x.numero}</span> {x.versiculo}
             </p>
           </div>
         ))}
         <div className='box-like'>
           <div className="d-flex justify-content-center">
-            <h6>Me gusta</h6>
+            <h6 className="myDIV">Me gusta</h6>
             <i className="bi bi-heart"></i>
           </div>
         </div>
-        <h2 className="text-2 text-center py-3">{charterView.testament}</h2>
+        <h2 className="text-2 text-center py-3 myDIV">{charterView.testament}</h2>
       </div>
     </div>
   );

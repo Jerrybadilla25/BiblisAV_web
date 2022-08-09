@@ -9,7 +9,7 @@ import Footer from '../component/footer/footer';
 
 const Container = (props) => {
     return (
-        <div>
+        <div className='row'>
             <Head>
                 <title>Biblia AV</title>
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"></link>
@@ -22,7 +22,7 @@ const Container = (props) => {
                 
             </Head>
             <Header/>
-            <div>
+            <div >
                 {props.children}
             </div>
             <Footer/>

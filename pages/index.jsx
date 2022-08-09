@@ -13,7 +13,7 @@ import Charter from "../component/Charter";
 
 export default function Home() {
   //const RUTA = "http://localhost:3000";
-  const RUTA = "http://bibliaav.ml"
+  const RUTA = "https://bibliaav.ml"
   const [versionView, setVersionView] = useState(false);
   const [version, setVersion] = useState("Reina_Valera_1960");
   const [books, setBooks] = useState(null);
@@ -31,6 +31,39 @@ export default function Home() {
   const [navView, setNavView] = useState(true);
   const [bodyView, setBodyView] = useState(true);
   const [charterViews, setCharterViews] = useState(true);
+  const [tamanoText, setTamanoText]=useState(false)
+
+  const [font, setFont]=useState("font-text-normal")
+  const [fontTitle, setFontTitle]=useState("font-text-normal-title")
+
+  const versiones = [
+    "Reina_Valera_1960", "Biblia_del_oso_1569"
+  ]
+
+  
+
+  //document.querySelector(".input-blue-border").style.borderColor = "red";
+
+  const fontText = (fuente, title) => {
+    setFont(fuente)
+    setFontTitle(title)
+    var elemento = document.querySelectorAll(".myDIV");
+    for (var i = 0; i < elemento.length; i++) {
+      elemento[i].classList.remove(font);
+      elemento[i].classList.add(fuente);
+    }
+    var elemento1 = document.querySelectorAll(".myDIV1");
+    for (var i = 0; i < elemento1.length; i++) {
+      elemento1[i].classList.remove(fontTitle);
+      elemento1[i].classList.add(title);
+    }
+    setTamanoText(!tamanoText);
+  };
+
+  const onChangeversion = (e)=>{
+    console.log(e.target.value)
+    setVersion(e.target.value)
+  }
 
   useEffect(() => {
     async function getBooks (){
@@ -55,6 +88,8 @@ export default function Home() {
     getBooks();
     
   }, []);
+
+  //value={firstName}   name="firstName" 
 
   const isVersionView = () => {
     setVersionView(!versionView);
@@ -125,7 +160,14 @@ export default function Home() {
     return (
       <Container>
         {navView ? (
-          <NavFhone changeNavView={changeNavView} />
+          <NavFhone 
+          changeNavView={changeNavView}
+          versiones={versiones}
+          onChangeversion={onChangeversion}
+          tamanoText={tamanoText}
+          setTamanoText={setTamanoText}
+          fontText={fontText}
+          />
         ) : (
           <>
             {charterViews ? (
@@ -133,6 +175,7 @@ export default function Home() {
                 books={books}
                 changeNavView={changeNavView}
                 selectBook={selectBook}
+                font={font}
               />
             ) : (
               <Charter
