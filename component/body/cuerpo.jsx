@@ -13,11 +13,11 @@ const Cuerpo = ({ charterView, changeNavView, decks, getCharter, fontText }) => 
     <div className="row">
       <div>
         <div className="d-flex justify-content-evenly box-social ">
-          <h6 className="social-1 myDIV">
-            <span className="mx-2 myDIV">Vistas</span> {charterView.like}
+          <h6 className="social-1">
+            <span className="mx-2">Vistas</span> {charterView.like}
           </h6>
-          <h6 className="social-1 myDIV">
-            <span className="mx-2 myDIV">Likes</span>
+          <h6 className="social-1">
+            <span className="mx-2">Likes</span>
             {charterView.view}
           </h6>
         </div>
@@ -26,24 +26,25 @@ const Cuerpo = ({ charterView, changeNavView, decks, getCharter, fontText }) => 
         {decks && (
           <div className="d-flex justify-content-evenly box-deck">
             <h6  onClick={() => getCharter(decks[0]._id)}>
-              <i className="bi bi-caret-left myDIV"></i> <span className="myDIV">{decks[0].charter}</span>
+              <i className="bi bi-caret-left"></i> <span className="">{decks[0].charter}</span>
             </h6>
 
-            <h6 className="myDIV" onClick={changeNavView}>
-              {charterView.charter} <i className="bi bi-caret-down-fill myDIV"></i>{" "}
+            <h6 className="" onClick={changeNavView}>
+              {charterView.charter} <i className="bi bi-caret-down-fill"></i>{" "}
             </h6>
 
             <h6  onClick={() => getCharter(decks[1]._id)}>
               {" "}
-              <span className="myDIV">
+              <span className="">
                 {decks[1].charter}
-              </span> <i className="bi bi-caret-right myDIV"></i>{" "}
+              </span> <i className="bi bi-caret-right"></i>{" "}
             </h6>
           </div>
         )}
       </div>
 
       <div className="body-per-1">
+        
         <h1 className="text-1 mb-5 myDIV1">{charterView.charter}</h1>
         
         {charterView.verses.map((x) => (
@@ -61,6 +62,7 @@ const Cuerpo = ({ charterView, changeNavView, decks, getCharter, fontText }) => 
           </div>
         </div>
         <h2 className="text-2 text-center py-3 myDIV">{charterView.testament}</h2>
+        <p className="text-center">{charterView.version}</p>
       </div>
     </div>
   );

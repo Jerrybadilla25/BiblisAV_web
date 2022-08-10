@@ -12,37 +12,36 @@ const NavFhone = ({ books, changeNavView, onChangeversion, versiones, setTamanoT
         <form action="" className="d-flex justify-content-between" >
           <input 
           type="text" 
-          className="input-per myDIV" 
+          className="input-per" 
           placeholder="Digite libro, palabra, versiculo"
           />
-          <button className="btn btn-per px-4"><i className="bi bi-search myDIV"></i></button>
+          <button className="btn btn-per px-4"><i className="bi bi-search"></i></button>
         </form>
       </div>
       <div className="mx-3 mt-3">
           <select 
-          className="selection-per myDIV"
+          className="selection-per"
           name="version"
           onChange={(e)=>onChangeversion(e)}
           >
-            <option placeholder="Seleccione version"></option>
             <option 
             defaultValue={versiones[0]} 
-            className="option-per myDIV"
+            className="option-per"
             >{versiones[0]}</option>
             <option 
             defaultValue={versiones[1]} 
-            className="option-per myDIV"
+            className="option-per"
             >{versiones[1]}</option>
           </select>
       </div>
       <div className="d-flex justify-content-between px-3 pt-3 text-per">
           <div className="d-flex justify-content-between" onClick={changeNavView} >
-            <p className="mx-2 myDIV">Biblia, Libros</p>
-            <i className="bi bi-journal-arrow-down myDIV"></i>
+            <p className="mx-2">Biblia, Libros</p>
+            <i className="bi bi-journal-arrow-down"></i>
           </div>
           <div className="d-flex justify-content-between" onClick={()=>setTamanoText(!tamanoText)}>
-              <p className="mx-2 myDIV">Tamaño fuente</p> 
-              <i className="bi bi-file-font myDIV"></i>
+              <p className="mx-2">Tamaño fuente</p> 
+              <i className="bi bi-file-font"></i>
           </div>
           {
             tamanoText===true &&

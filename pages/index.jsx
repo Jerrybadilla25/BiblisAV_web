@@ -52,21 +52,16 @@ export default function Home() {
       elemento[i].classList.remove(font);
       elemento[i].classList.add(fuente);
     }
-    var elemento1 = document.querySelectorAll(".myDIV1");
-    for (var i = 0; i < elemento1.length; i++) {
-      elemento1[i].classList.remove(fontTitle);
-      elemento1[i].classList.add(title);
-    }
     setTamanoText(!tamanoText);
   };
 
+
   const onChangeversion = (e)=>{
-    console.log(e.target.value)
     setVersion(e.target.value)
   }
 
   useEffect(() => {
-    async function getBooks (){
+    async function getBooks (){ 
       try {
         const data = await fetch(`${RUTA}/api/getBooks/getbook`, {
           method: "POST",
@@ -87,7 +82,7 @@ export default function Home() {
 
     getBooks();
     
-  }, []);
+  }, [version]);
 
   //value={firstName}   name="firstName" 
 
@@ -126,8 +121,13 @@ export default function Home() {
       });
       const res = await data.json();
       console.log(res)
-      setCharterView(res.data1);
-      setDeck(res.deck.deck)
+      if(res.data1){
+        setCharterView(res.data1);
+        setDeck(res.deck.deck)
+      }else{
+        setCharterView(res.data2);
+        setDeck(res.deck1.deck)
+      }
       setCharterNumber(null);
       setNavView(true);
       setCharterViews(true);
