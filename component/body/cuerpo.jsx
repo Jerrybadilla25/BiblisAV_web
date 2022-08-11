@@ -1,6 +1,8 @@
 import React from "react";
+import BoxBusqueda from './boxBusqueda';
+import BoxCuerpo from './boxCuerpo';
 
-const Cuerpo = ({ charterView, changeNavView, decks, getCharter, fontText }) => {
+const Cuerpo = ({ charterView, changeNavView, decks, getCharter, found, estadoFound, setEstadoFound, estado1, search }) => {
   if (charterView === null) {
     return (
       <div className="cargando">
@@ -10,62 +12,27 @@ const Cuerpo = ({ charterView, changeNavView, decks, getCharter, fontText }) => 
   }
 
   return (
-    <div className="row">
-      <div>
-        <div className="d-flex justify-content-evenly box-social ">
-          <h6 className="social-1">
-            <span className="mx-2">Vistas</span> {charterView.like}
-          </h6>
-          <h6 className="social-1">
-            <span className="mx-2">Likes</span>
-            {charterView.view}
-          </h6>
-        </div>
-      </div>
-      <div>
-        {decks && (
-          <div className="d-flex justify-content-evenly box-deck">
-            <h6  onClick={() => getCharter(decks[0]._id)}>
-              <i className="bi bi-caret-left"></i> <span className="">{decks[0].charter}</span>
-            </h6>
-
-            <h6 className="" onClick={changeNavView}>
-              {charterView.charter} <i className="bi bi-caret-down-fill"></i>{" "}
-            </h6>
-
-            <h6  onClick={() => getCharter(decks[1]._id)}>
-              {" "}
-              <span className="">
-                {decks[1].charter}
-              </span> <i className="bi bi-caret-right"></i>{" "}
-            </h6>
-          </div>
-        )}
-      </div>
-
-      <div className="body-per-1">
-        
-        <h1 className="text-1 mb-5 myDIV1">{charterView.charter}</h1>
-        
-        {charterView.verses.map((x) => (
-          <div key={x._id}>
-            <p className="text-verses myDIV">
-              {" "}
-              <span className="me-2 text-2 myDIV">{x.numero}</span> {x.versiculo}
-            </p>
-          </div>
-        ))}
-        <div className='box-like'>
-          <div className="d-flex justify-content-center">
-            <h6 className="myDIV">Me gusta</h6>
-            <i className="bi bi-heart"></i>
-          </div>
-        </div>
-        <h2 className="text-2 text-center py-3 myDIV">{charterView.testament}</h2>
-        <p className="text-center">{charterView.version}</p>
-      </div>
+    <div>
+      {
+        estadoFound ?
+        <BoxCuerpo
+        charterView={charterView}
+        changeNavView={changeNavView}
+        decks={decks}
+        getCharter={getCharter}
+        />
+        :
+       <BoxBusqueda
+       getCharter={getCharter}
+       found={found}
+       setEstadoFound={setEstadoFound}
+       estado1={estado1}
+       search={search}
+       />
+      }
     </div>
   );
 };
 
 export default Cuerpo;
+

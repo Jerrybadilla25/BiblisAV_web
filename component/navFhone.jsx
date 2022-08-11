@@ -1,6 +1,6 @@
 import React from "react";
 
-const NavFhone = ({ books, changeNavView, onChangeversion, versiones, setTamanoText, tamanoText, fontText }) => {
+const NavFhone = ({ books, changeNavView, onChangeversion, versiones, setTamanoText, tamanoText, fontText, searchWord, search, searchApi }) => {
 
     if(books===null){
         return(<div>hada</div>)
@@ -9,14 +9,18 @@ const NavFhone = ({ books, changeNavView, onChangeversion, versiones, setTamanoT
     <div className="row">
       <div className="nav-barra">
       <div className="mx-3 mt-3"  >
-        <form action="" className="d-flex justify-content-between" >
+        <div className="d-flex justify-content-between" >
           <input 
+          defaultValue={search}
           type="text" 
           className="input-per" 
           placeholder="Digite libro, palabra, versiculo"
+          name="search"
+          onChange={(e)=>searchWord(e)}
           />
-          <button className="btn btn-per px-4"><i className="bi bi-search"></i></button>
-        </form>
+          <button onClick={searchApi} className="btn btn-per px-4"><i className="bi bi-search"></i></button>
+        </div>
+        <span>Ejm: Salmos 10 / salmos 10:2 / salmos 10:2-5 / jesus</span>
       </div>
       <div className="mx-3 mt-3">
           <select 

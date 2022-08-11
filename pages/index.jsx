@@ -32,17 +32,47 @@ export default function Home() {
   const [bodyView, setBodyView] = useState(true);
   const [charterViews, setCharterViews] = useState(true);
   const [tamanoText, setTamanoText]=useState(false)
+  const [found, setFound]=useState(null)//save search
+  const [estadoFound, setEstadoFound]=useState(true) // cambia cuerpo a resultados busqueda
 
   const [font, setFont]=useState("font-text-normal")
   const [fontTitle, setFontTitle]=useState("font-text-normal-title")
+  const [search, setSearch]=useState("")
+
+  const [estado1, setEstado1]=useState(true) //recarga el useefecto de boxbusqueda
 
   const versiones = [
     "Reina_Valera_1960", "Biblia_del_oso_1569"
   ]
 
+
+
   
 
-  //document.querySelector(".input-blue-border").style.borderColor = "red";
+  const searchWord = (e)=>{
+    setSearch(e.target.value)
+  }
+
+  const searchApi = async()=>{
+    try {
+      const data = await fetch(`${RUTA}/api/getBooks/search`, {
+        method: "POST",
+        body: JSON.stringify({ search: search, version: version }),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      });
+      const res = await data.json();
+      setFound(res)
+      setEstadoFound(!setEstadoFound)
+      //setSearch(" ")
+      setEstado1(!estado1)
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  
 
   const fontText = (fuente, title) => {
     setFont(fuente)
@@ -57,6 +87,7 @@ export default function Home() {
 
 
   const onChangeversion = (e)=>{
+    setEstadoFound(!estadoFound)
     setVersion(e.target.value)
   }
 
@@ -84,8 +115,7 @@ export default function Home() {
     
   }, [version]);
 
-  //value={firstName}   name="firstName" 
-
+  
   const isVersionView = () => {
     setVersionView(!versionView);
   };
@@ -128,6 +158,7 @@ export default function Home() {
         setCharterView(res.data2);
         setDeck(res.deck1.deck)
       }
+      setEstadoFound(!estadoFound)
       setCharterNumber(null);
       setNavView(true);
       setCharterViews(true);
@@ -137,26 +168,7 @@ export default function Home() {
     }
   };
 
-  /*
-  const getBooks = async () => {
-    try {
-      const data = await fetch(`${RUTA}/api/getBooks/getbook`, {
-        method: "POST",
-        body: JSON.stringify({ version: version }),
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-      });
-      const res = await data.json();
-      setBooks(res.arrayBook);
-      setCharterView(res.char);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  */
-
+  
     return (
       <Container>
         {navView ? (
@@ -167,6 +179,9 @@ export default function Home() {
           tamanoText={tamanoText}
           setTamanoText={setTamanoText}
           fontText={fontText}
+          search={search}
+          searchWord={searchWord}
+          searchApi={searchApi}
           />
         ) : (
           <>
@@ -205,6 +220,11 @@ export default function Home() {
             changeNavView={changeNavView}
             decks={decks}
             getCharter={getCharter}
+            estadoFound={estadoFound}
+            setEstadoFound={setEstadoFound}
+            found={found}
+            estado1={estado1}
+            search={search}
             /> : <h6></h6>}
           </div>
           <div className="col-sm-12 col-md-2 col-xl-2 box-libro display-none"></div>
