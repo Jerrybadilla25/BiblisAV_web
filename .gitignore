@@ -10,9 +10,9 @@ info.txt
 /coverage
 
 # next.js
-
+/.next/
 /out/
-
+/Biblias/
 # production
 /build
 .env

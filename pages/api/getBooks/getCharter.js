@@ -3,8 +3,8 @@ import Books from "../../../model/modelbook";
 import Charter from "../../../model/modelcharter";
 import Verses from "../../../model/modelverse";
 
-import RV from "../../../component/Biblias/ReinaValera/buscarCapituloReinaValera.json";
-import BO from "../../../component/Biblias/Oso/buscarCapituloOso.json";
+import RV from "../../../Biblias/ReinaValera/buscarCapituloReinaValera.json";
+import BO from "../../../Biblias/Oso/buscarCapituloOso.json";
 
 dbConection();
 

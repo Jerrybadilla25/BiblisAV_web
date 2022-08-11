@@ -3,10 +3,10 @@ import Books from '../../../model/modelbook';
 import Charter from '../../../model/modelcharter';
 import Verses from '../../../model/modelverse';
 
-import fullRV from '../../../component/Biblias/versosall.json';
-import fullBO from '../../../component/Biblias/versosall2.json';
-import fullCharterRV from '../../../component/Biblias/ReinaValera/buscarCapituloReinaValera.json';
-import fullCharterBO from '../../../component/Biblias/Oso/buscarCapituloOso.json';
+import fullRV from '../../../Biblias/versosall.json';
+import fullBO from '../../../Biblias/versosall2.json';
+import fullCharterRV from '../../../Biblias/ReinaValera/buscarCapituloReinaValera.json';
+import fullCharterBO from '../../../Biblias/Oso/buscarCapituloOso.json';
 
 dbConection()
 
