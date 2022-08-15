@@ -12,7 +12,7 @@ info.txt
 # next.js
 /.next/
 /out/
-/Biblias/
+#/Biblias/
 # production
 /build
 .env

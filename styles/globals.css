@@ -446,6 +446,20 @@ select option {
 .busqueda-palabra h5 strong:hover{
   color: var(--l-red);
 }
+.verses-busqueda span{
+  color: black;
+}
+.box-content div h6 {
+  padding: 8px;
+  background-color: var(--bg-body-navHelp);
+  margin-right: 6px;
+  width: 8em;
+}
+.box-content div h6:hover {
+  padding: 8px;
+  background-color: var(--bg-body-header);
+  color: var(--input-fiel);
+}
 
 /*########################## font-text ###################*/
 .font-text-grande {

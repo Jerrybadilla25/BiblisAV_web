@@ -12,8 +12,8 @@ import Books from "../component/Books";
 import Charter from "../component/Charter";
 
 export default function Home() {
-  //const RUTA = "http://localhost:3000";
-  const RUTA = "https://bibliaav.ml"
+  const RUTA = "http://localhost:3000";
+  //const RUTA = "https://bibliaav.ml"
   const [versionView, setVersionView] = useState(false);
   const [version, setVersion] = useState("Reina_Valera_1960");
   const [books, setBooks] = useState(null);
@@ -64,10 +64,14 @@ export default function Home() {
         },
       });
       const res = await data.json();
-      setFound(res)
-      setEstadoFound(!setEstadoFound)
-      //setSearch(" ")
-      setEstado1(!estado1)
+      if(res.idCharter){
+        getCharter(res.idCharter._id)
+      }else{
+        setFound(res)
+        setEstadoFound(false)
+        setEstado1(!estado1)
+      }
+      
     } catch (error) {
       console.log(error);
     }
@@ -87,7 +91,7 @@ export default function Home() {
 
 
   const onChangeversion = (e)=>{
-    setEstadoFound(!estadoFound)
+    setEstadoFound(true)
     setVersion(e.target.value)
   }
 
@@ -140,6 +144,7 @@ export default function Home() {
   };
 
   const getCharter = async (id) => {
+    console.log(id)
     try {
       const data = await fetch(`${RUTA}/api/getBooks/getCharter`, {
         method: "POST",
@@ -154,11 +159,13 @@ export default function Home() {
       if(res.data1){
         setCharterView(res.data1);
         setDeck(res.deck.deck)
+        setEstadoFound(true)
       }else{
         setCharterView(res.data2);
         setDeck(res.deck1.deck)
+        setEstadoFound(true)
       }
-      setEstadoFound(!estadoFound)
+      setEstadoFound(true)
       setCharterNumber(null);
       setNavView(true);
       setCharterViews(true);
