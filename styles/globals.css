@@ -2,6 +2,7 @@
 html,
 body {
   /*background-color: var(--bg-body-backgroud);*/
+  background-color: var(--l-hueso);
   padding: 0 !important;
   margin: 0 !important;
   
@@ -265,6 +266,10 @@ li {
 
 
 /*#################### barra fhone #################*/
+.header-barra{
+  margin: 0em 16em;
+}
+
 .nav-barra{
   padding-top: 4px;
   padding-bottom: 4px;
@@ -403,6 +408,9 @@ select option {
 @media only screen and (max-width: 720px) {
   .display-none {
     display: none;
+  }
+  .header-barra{
+    margin: 0em 0.5em;
   }
 }
 

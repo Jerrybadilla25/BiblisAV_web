@@ -178,7 +178,12 @@ export default function Home() {
   
     return (
       <Container>
-        {navView ? (
+        
+  
+       
+          
+          <div className="header-barra">
+          {navView ? (
           <NavFhone 
           changeNavView={changeNavView}
           versiones={versiones}
@@ -209,18 +214,6 @@ export default function Home() {
             )}
           </>
         )}
-  
-        <div className="row">
-          <div className="col-sm-12 col-md-3 col-xl-2 display-none">
-            <Libros
-              books={books}
-              selectBook={selectBook}
-              charterNumber={charterNumber}
-              atras={atras}
-              getCharter={getCharter}
-            />
-          </div>
-          <div className="col-sm-12 col-md-7 col-xl-8 body-per">
             {bodyView ? 
             <Cuerpo 
             charterView={charterView} 
@@ -234,8 +227,8 @@ export default function Home() {
             search={search}
             /> : <h6></h6>}
           </div>
-          <div className="col-sm-12 col-md-2 col-xl-2 box-libro display-none"></div>
-        </div>
+          
+      
       </Container>
     );
   

@@ -6,6 +6,9 @@ const NavFhone = ({ books, changeNavView, onChangeversion, versiones, setTamanoT
         return(<div>hada</div>)
     }
   return (
+    <div className="header-barra-search">
+
+    
     <div className="row">
       <div className="nav-barra">
       <div className="mx-3 mt-3"  >
@@ -58,6 +61,7 @@ const NavFhone = ({ books, changeNavView, onChangeversion, versiones, setTamanoT
           }
           
       </div>
+    </div>
     </div>
     </div>
   );
